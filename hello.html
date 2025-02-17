@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasoi - Authentic Indian Cuisine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f5f2;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        #restaurant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: #8B0000;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+        
+        .slogan {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .nav-menu {
+            background-color: #8B0000;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-menu li {
+            padding: 15px 0;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #5c0000;
+        }
+        
+        .hero {
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-text {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px 40px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .specialties-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #8B0000;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #8B0000;
+        }
+        
+        .specialties-list {
+            list-style-type: square;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .specialties-list li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .top-dishes {
+            list-style-type: upper-roman;
+            padding-left: 30px;
+        }
+        
+        .top-dishes li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .menu-table th, .menu-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .menu-table th {
+            background-color: #8B0000;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .menu-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .menu-table tr:hover {
+            background-color: #f5f0e9;
+        }
+        
+        .dish-price {
+            font-weight: bold;
+            color: #8B0000;
+        }
+        
+        .dish-description {
+            font-style: italic;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #8B0000;
+            color: white;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .external-link {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        
+        .external-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="restaurant-name">Rasoi</h1>
+        <p class="slogan">Experience the authentic flavors of India</p>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="https://maps.google.com" target="_blank">Find Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Welcome to Rasoi</h2>
+            <p>Traditional Indian cuisine with a modern twist</p>
+        </div>
+    </section>
+    
+    <section class="specialties-section">
+        <h2 class="section-title">Our Specialties</h2>
+        
+        <h3>Signature Dishes (Unordered List)</h3>
+        <ul class="specialties-list">
+            <li>Butter Chicken & Naan</li>
+            <li>Tandoori Chicken</li>
+            <li>Paneer Tikka</li>
+            <li>Gulab Jamun</li>
+            <li>Masala Chai</li>
+        </ul>
+        
+        <h3>Top 5 Most Popular Dishes (Ordered List)</h3>
+        <ol class="top-dishes">
+            <li>Chicken Biryani</li>
+            <li>Rogan Josh</li>
+            <li>Palak Paneer</li>
+            <li>Fish Curry</li>
+            <li>Jalebi</li>
+        </ol>
+    </section>
+    
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Featured Menu Items</h2>
+        
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Butter Chicken</td>
+                    <td class="dish-price">₹350</td>
+                    <td class="dish-description">Tender chicken cooked in a creamy tomato sauce with Indian spices</td>
+                </tr>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    <td class="dish-price">₹250</td>
+                    <td class="dish-description">Grilled paneer cubes marinated in yogurt and spices</td>
+                </tr>
+                <tr>
+                    <td>Fish Curry</td>
+                    <td class="dish-price">₹400</td>
+                    <td class="dish-description">Fresh fish cooked in a spicy and tangy curry sauce</td>
+                </tr>
+                <tr>
+                    <td>Biryani</td>
+                    <td class="dish-price">₹300</td>
+                    <td class="dish-description">Aromatic basmati rice cooked with meat or vegetables and Indian spices</td>
+                </tr>
+                <tr>
+                    <td>Gulab Jamun</td>
+                    <td class="dish-price">₹100</td>
+                    <td class="dish-description">Soft and spongy milk-based dessert soaked in sugar syrup</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p>For reservations, please call: (022) 1234-5678</p>
+        <p>Address: 456 Spice Street, Mumbai, MH 400001</p>
+        <p>Hours: Monday-Sunday, 12pm-11pm</p>
+    </section>
+    
+    <footer>
+        <p>© 2025 Rasoi. All rights reserved.</p>
+        <p>Visit us on <a href="https://instagram.com" target="_blank" class="external-link">Instagram</a> and <a href="https://facebook.com" target="_blank" class="external-link">Facebook</a></p>
+    </footer>
+</body>
+</html>

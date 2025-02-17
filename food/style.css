@@ -1,0 +1,38 @@
+.home {
+    text-align: center;
+    height: 100vh;
+}
+
+.navbar {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    height: 56px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbar>.logo {
+    background-color: #f44336;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+}
+
+.navbar>.logo-title {
+    margin-left: 10px;
+}
+
+.navbar>.nav-items {
+    margin-left: auto;
+}
+
+.navbar>.nav-items>.nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+    color: #333;
+}

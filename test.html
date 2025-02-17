@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET vs POST Methods Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-container {
+            width: 48%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding GET and POST Methods</h1>
+    
+    <div class="container">
+        <!-- GET Method Form -->
+        <div class="form-container">
+            <h2>GET Method Form</h2>
+            <form action="action.php" method="GET">
+                <div class="form-group">
+                    <label for="name-get">Name:</label>
+                    <input type="text" id="name-get" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-get">Password:</label>
+                    <input type="password" id="password-get" name="password" required>
+                </div>
+                <input type="submit" value="Submit (GET)">
+            </form>
+        </div>
+        
+        <!-- POST Method Form -->
+        <div class="form-container">
+            <h2>POST Method Form</h2>
+            <form action="action.php" method="POST">
+                <div class="form-group">
+                    <label for="name-post">Name:</label>
+                    <input type="text" id="name-post" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-post">Password:</label>
+                    <input type="password" id="password-post" name="password" required>
+                </div>
+                <input type="submit" value="Submit (POST)">
+            </form>
+        </div>
+    </div>
+    
+    <div class="explanation">
+        <p><strong>Note:</strong> For this demo to work properly, you need a server with PHP installed and the action.php file that can process the form submissions.</p>
+    </div>
+</body>
+</html>

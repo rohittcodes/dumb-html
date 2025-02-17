@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradise Restaurant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .nav-menu {
+            background-color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background-color: #34495e;
+            border-radius: 4px;
+        }
+
+        #restaurant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .menu-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .menu-table th, .menu-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-table th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .menu-table tr:hover {
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        .specialties {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .specialties li {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+
+        .ordered-specialties {
+            list-style-type: upper-roman;
+            padding-left: 20px;
+        }
+
+        .ordered-specialties li {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact Us</a>
+        <a href="https://maps.google.com" target="_blank">Location</a>
+    </nav>
+
+    <h1 id="restaurant-name">Paradise</h1>
+
+    <div class="menu-card">
+        <h2>Our Menu</h2>
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Butter Chicken</td>
+                    <td>$18.99</td>
+                    <td>Tender chicken in rich tomato-based curry sauce</td>
+                </tr>
+                <tr>
+                    <td>Margherita Pizza</td>
+                    <td>$16.99</td>
+                    <td>Fresh basil, mozzarella, and tomato sauce</td>
+                </tr>
+                <tr>
+                    <td>Kung Pao Chicken</td>
+                    <td>$17.99</td>
+                    <td>Spicy diced chicken with peanuts and vegetables</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Our Specialties</h2>
+        <ul class="specialties">
+            <li>Authentic Indian Cuisine</li>
+            <li>Traditional Italian Dishes</li>
+            <li>Classic Chinese Favorites</li>
+            <li>Mediterranean Delicacies</li>
+            <li>Modern Fusion Creations</li>
+        </ul>
+
+        <h2>Featured Cuisines</h2>
+        <ol class="ordered-specialties">
+            <li>Authentic Indian Cuisine</li>
+            <li>Traditional Italian Dishes</li>
+            <li>Classic Chinese Favorites</li>
+            <li>Mediterranean Delicacies</li>
+            <li>Modern Fusion Creations</li>
+        </ol>
+    </div>
+</body>
+</html>

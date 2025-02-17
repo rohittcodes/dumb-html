@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #666;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            grid-column: span 2;
+            resize: vertical;
+            height: 100px;
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+        .submit-btn {
+            grid-column: span 2;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        .dialog-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to Our Feedback Page</h2>
+    </header>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="feedbackForm">
+            <div class="full-width">
+                <label for="name">Name (optional)</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="full-width">
+                <label for="email">Email (optional)</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="full-width">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="full-width">
+                <label for="rating">Rating</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 - Very Poor</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="3">3 - Average</option>
+                    <option value="4">4 - Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+
+            <div class="full-width">
+                <label for="questions">Any Questions regarding product or service</label>
+                <textarea id="questions" name="questions"></textarea>
+            </div>
+
+            <div class="full-width">
+                <label for="comments">Additional comments (optional)</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Feedback Inc. All rights reserved.</p>
+    </footer>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog" id="dialog">
+        <p>Thank you for your feedback!</p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('dialogOverlay').style.display = 'block';
+            document.getElementById('dialog').style.display = 'block';
+        });
+
+        function closeDialog() {
+            document.getElementById('dialogOverlay').style.display = 'none';
+            document.getElementById('dialog').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
