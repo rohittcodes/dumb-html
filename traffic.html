@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #traffic-light {
+            width: 60px;
+            background-color: rgb(16, 14, 14);
+            padding: 20px;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .light {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+        #red {
+            animation: redLight 3s infinite;
+        }
+        #yellow {
+            animation: yellowLight 3s infinite;
+        }
+        #green {
+            animation: greenLight 3s infinite;
+        }
+        @keyframes redLight {
+            0%, 33% { background-color: red; }
+            34%, 100% { background-color: #333; }
+        }
+        @keyframes yellowLight {
+            0%, 33% { background-color: #333; }
+            34%, 66% { background-color: yellow; }
+            67%, 100% { background-color: #333; }
+        }
+        @keyframes greenLight {
+            0%, 66% { background-color: #333; }
+            67%, 100% { background-color: green; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Traffic Lights</h1>
+    <div id="traffic-light">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+    </div>
+</body>
+</html>

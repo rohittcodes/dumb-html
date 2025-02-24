@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+</head>
+<body>
+    <h1>Traffic Lights</h1>
+    <div id="traffic-light"></div>
+    <script>
+        const trafficLight = document.createElement('div');
+        trafficLight.style.width = '60px';
+        trafficLight.style.backgroundColor = 'rgb(16, 14, 14)';
+        trafficLight.style.padding = '20px';
+        trafficLight.style.borderRadius = '50px';
+        trafficLight.style.display = 'flex';
+        trafficLight.style.flexDirection = 'column';
+        trafficLight.style.alignItems = 'center';
+        document.getElementById('traffic-light').appendChild(trafficLight);
+
+        const colors = ['red', 'yellow', 'green'];
+        colors.forEach(color => {
+            const light = document.createElement('div');
+            light.id = color;
+            light.style.width = '50px';
+            light.style.height = '50px';
+            light.style.margin = '10px';
+            light.style.borderRadius = '50%';
+            light.style.backgroundColor = '#333';
+            trafficLight.appendChild(light);
+        });
+
+        let index = 0;
+        function changeLight() {
+            colors.forEach(color => {
+                document.getElementById(color).style.backgroundColor = '#333';
+            });
+            document.getElementById(colors[index]).style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        }
+        setInterval(changeLight, 1000);
+
+        document.body.style.display = 'flex';
+        document.body.style.flexDirection = 'column';
+        document.body.style.justifyContent = 'center';
+        document.body.style.alignItems = 'center';
+        document.body.style.height = '100vh';
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        document.body.style.fontFamily = 'Arial, sans-serif';
+    </script>
+</body>
+</html>
