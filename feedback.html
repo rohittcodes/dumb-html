@@ -65,8 +65,12 @@
     <div class="modal fade" id="thankYouModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body text-center py-4">
-                    <p class="mb-0">Thank you for your feedback!</p>
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank you for your feedback!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="submittedDetails"></div>
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -76,11 +80,81 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        const form = document.getElementById('feedbackForm');
+        const modal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+        
+        const patterns = {
+            email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+            phone: /^[\d\s-+()]{10,}$/,
+        };
+
+        function validateForm() {
+            let isValid = true;
+            
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+            document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+            const emailInput = form.querySelector('#email');
+            if (emailInput.value && !patterns.email.test(emailInput.value)) {
+                showError(emailInput, 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            const phoneInput = form.querySelector('#phone');
+            if (phoneInput.value && !patterns.phone.test(phoneInput.value)) {
+                showError(phoneInput, 'Please enter a valid phone number');
+                isValid = false;
+            }
+
+            const ratingInput = form.querySelector('#rating');
+            if (!ratingInput.value) {
+                showError(ratingInput, 'Please select a rating');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(input, message) {
+            input.classList.add('is-invalid');
+            const error = document.createElement('div');
+            error.className = 'invalid-feedback error-message';
+            error.innerText = message;
+            input.parentNode.appendChild(error);
+        }
+
+        form.addEventListener('submit', function(event) {
             event.preventDefault();
-            const modal = new bootstrap.Modal(document.getElementById('thankYouModal'));
-            modal.show();
+            
+            if (validateForm()) {
+                const formData = {
+                    name: form.name.value || 'Anonymous',
+                    email: form.email.value || 'Not provided',
+                    phone: form.phone.value || 'Not provided',
+                    rating: form.rating.value,
+                    questions: form.questions.value || 'None',
+                    comments: form.comments.value || 'None'
+                };
+
+                const detailsHTML = `
+                    <div class="submitted-details">
+                        <h6 class="mb-3">Submitted Details:</h6>
+                        <p><strong>Name:</strong> ${formData.name}</p>
+                        <p><strong>Email:</strong> ${formData.email}</p>
+                        <p><strong>Phone:</strong> ${formData.phone}</p>
+                        <p><strong>Rating:</strong> ${formData.rating} stars</p>
+                        <p><strong>Questions:</strong> ${formData.questions}</p>
+                        <p><strong>Comments:</strong> ${formData.comments}</p>
+                    </div>
+                `;
+
+                const submittedDetails = document.getElementById('submittedDetails');
+                submittedDetails.innerHTML = detailsHTML;
+                modal.show();
+                form.reset();
+            }
         });
     </script>
 
